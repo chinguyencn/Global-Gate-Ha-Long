@@ -7,21 +7,24 @@ const metrics = [
     value: "11,89%",
     sub: "Top 1 Miền Bắc",
     icon: <BarChart3 className="text-white" />,
-    color: "bg-navy"
+    color: "bg-[#053026] border border-emerald-800/40 hover:border-gold/30 shadow-[0_4px_20px_rgba(5,48,38,0.3)]",
+    textColor: "text-gold"
   },
   {
     label: "Thu ngân sách kỷ lục",
-    value: "82.000 Tỷ",
+    value: "82.235 Tỷ",
     sub: "Đồng",
     icon: <Landmark className="text-white" />,
-    color: "bg-gold"
+    color: "bg-[#053026] border border-emerald-800/40 hover:border-gold/30 shadow-[0_4px_20px_rgba(5,48,38,0.3)]",
+    textColor: "text-gold"
   },
   {
     label: "Quy mô dự án",
-    value: "6.206 Ha",
+    value: "6.220 Ha",
     sub: "Đại đô thị biển",
     icon: <Globe className="text-white" />,
-    color: "bg-navy-light"
+    color: "bg-[#053026] border border-emerald-800/40 hover:border-gold/30 shadow-[0_4px_20px_rgba(5,48,38,0.3)]",
+    textColor: "text-gold"
   }
 ];
 
@@ -53,7 +56,7 @@ export default function EconomicPotential() {
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
           >
-            Quảng Ninh không chỉ là thủ phủ du lịch, mà còn là đầu tàu kinh tế với những con số biết nói. Vinhomes Global Gate là trái tim của sự bùng nổ này.
+            Quảng Ninh không chỉ là thủ phủ du lịch, mà còn là đầu tàu kinh tế với những con số biết nói. Vinhomes Global Gate - Thành phố trong lòng Thành phố.
           </motion.p>
         </div>
 
@@ -61,7 +64,7 @@ export default function EconomicPotential() {
           {metrics.map((item, index) => (
             <motion.div
               key={index}
-              className={`${item.color} p-10 rounded-2xl border border-white/10 shadow-2xl flex flex-col items-center text-center`}
+              className={`${item.color} p-10 rounded-2xl shadow-2xl flex flex-col items-center text-center`}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -72,7 +75,7 @@ export default function EconomicPotential() {
                 {item.icon}
               </div>
               <p className="text-sm uppercase tracking-widest text-gray-300 mb-2">{item.label}</p>
-              <h3 className="text-4xl md:text-5xl font-bold text-gold mb-1">{item.value}</h3>
+              <h3 className={`text-4xl md:text-5xl font-bold mb-1 ${item.textColor}`}>{item.value}</h3>
               <p className="text-lg font-semibold">{item.sub}</p>
             </motion.div>
           ))}
@@ -86,12 +89,12 @@ export default function EconomicPotential() {
         >
           <div className="flex flex-col md:flex-row items-center gap-10">
             <div className="md:w-1/3">
-              <h4 className="text-2xl font-display font-bold mb-4">Siêu dự án 6.206ha</h4>
+              <h4 className="text-2xl font-display font-bold mb-4">Siêu dự án 6.220ha</h4>
               <p className="text-gray-400">Tổng vốn đầu tư 18 tỷ USD. Quy mô dân số dự kiến đạt 380.000 người, kiến tạo một chuẩn mực sống thượng lưu mới bên vịnh di sản.</p>
             </div>
             <div className="md:w-2/3 grid grid-cols-2 sm:grid-cols-4 gap-6">
               {[
-                { label: "VinWonders", val: "Siêu CV" },
+                { label: "VinWonders", val: "Siêu CV 81ha" },
                 { label: "Sân Golf", val: "12 Sân" },
                 { label: "Dân số", val: "380.000" },
                 { label: "Hạ tầng", val: "18 Tỷ $" },

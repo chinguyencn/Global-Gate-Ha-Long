@@ -5,6 +5,7 @@
 
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
+import RunningBanner from "./components/RunningBanner";
 import TodLogic from "./components/TodLogic";
 import HaLongStation from "./components/HaLongStation";
 import EconomicPotential from "./components/EconomicPotential";
@@ -19,6 +20,7 @@ export default function App() {
     <main className="relative">
       <Navbar />
       <Hero />
+      <RunningBanner />
       <TodLogic />
       <HaLongStation />
       <EconomicPotential />

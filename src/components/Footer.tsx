@@ -2,10 +2,13 @@ export default function Footer() {
   return (
     <footer className="bg-navy py-12 border-t border-white/5">
       <div className="container mx-auto px-4 text-center">
-        <div className="flex items-center justify-center gap-2 mb-6">
-          <div className="w-8 h-8 bg-gold rounded flex items-center justify-center font-display font-bold text-navy">
-            V
-          </div>
+        <div className="flex items-center justify-center gap-3 mb-6">
+          <img 
+            src="https://i.postimg.cc/SN3s1sMc/logo.png" 
+            alt="Vinhomes Global Gate Halong" 
+            className="w-9 h-9 object-contain rounded-full shadow-md shadow-emerald-950/20"
+            referrerPolicy="no-referrer"
+          />
           <span className="text-white font-display font-bold text-xl">VINHOMES GLOBAL GATE</span>
         </div>
         <p className="text-gray-500 text-sm max-w-md mx-auto mb-8">

@@ -6,17 +6,19 @@ const products = [
     title: "Liền kề & Shophouse",
     subtitle: "Gà đẻ trứng vàng",
     desc: "Đón dòng khách khổng lồ từ Ga Depot Vinspeed, VinWonders và hệ thống 12 sân Golf đẳng cấp quốc tế.",
-    image: "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?q=80&w=2070&auto=format&fit=crop",
+    image: "https://i.postimg.cc/76c8jRmx/shophouse-product.png",
     icon: <ShoppingBag className="text-gold" />,
-    tags: ["Thanh khoản cao", "Kinh doanh 24/7"]
+    tags: ["Thanh khoản cao", "Kinh doanh 24/7"],
+    fileUrl: "https://drive.google.com/uc?export=download&id=1SwQZz1XqUoXoa-UMk2ij3TxYII2CBfwm"
   },
   {
     title: "Biệt thự Song lập",
     subtitle: "Sản phẩm khan hiếm",
     desc: "Sở hữu 212km mặt nước bao quanh, mang lại không gian sống sinh thái và tiềm năng tăng giá vốn cực mạnh.",
-    image: "https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=2071&auto=format&fit=crop",
+    image: "https://i.postimg.cc/HnnZ106M/duplex-villas.png",
     icon: <Waves className="text-gold" />,
-    tags: ["Tầm nhìn triệu đô", "Số lượng giới hạn"]
+    tags: ["Tầm nhìn triệu đô", "Số lượng giới hạn"],
+    fileUrl: "https://drive.google.com/uc?export=download&id=1OKnOF6wMpxVEKdff3PfCePfuCnYeLWRq"
   }
 ];
 
@@ -26,7 +28,7 @@ export default function ProductShowcase() {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <motion.h2 
-            className="text-3xl md:text-5xl font-display font-bold text-navy mb-6"
+            className="text-xl md:text-3xl font-display font-bold text-navy mb-6"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -71,9 +73,23 @@ export default function ProductShowcase() {
                     </span>
                   ))}
                 </div>
-                <button className="w-full py-4 border-2 border-navy text-navy font-bold rounded-xl hover:bg-navy hover:text-white transition-all">
-                  XEM CHI TIẾT MẶT BẰNG
-                </button>
+                {product.fileUrl.startsWith("http") ? (
+                  <a 
+                    href={product.fileUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full block text-center py-4 border-2 border-navy text-navy font-bold rounded-xl hover:bg-navy hover:text-white transition-all shadow-sm cursor-pointer"
+                  >
+                    TẢI CHI TIẾT MẶT BẰNG (DIRECT DOWNLOAD)
+                  </a>
+                ) : (
+                  <a 
+                    href={product.fileUrl}
+                    className="w-full block text-center py-4 border-2 border-navy text-navy font-bold rounded-xl hover:bg-navy hover:text-white transition-all shadow-sm cursor-pointer"
+                  >
+                    KẾT NỐI NHẬN MẶT BẰNG CHI TIẾT
+                  </a>
+                )}
               </div>
             </motion.div>
           ))}

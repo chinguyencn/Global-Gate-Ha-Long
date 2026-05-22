@@ -12,7 +12,7 @@ export default function HaLongStation() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-5xl font-display font-bold text-navy mb-8 leading-tight uppercase">
+            <h2 className="text-xl md:text-3xl font-display font-bold text-navy mb-8 leading-tight uppercase">
               HÉ LỘ HÌNH ẢNH CỦA HẠ LONG STATION TẠI VINHOMES GLOBAL GATE HẠ LONG
             </h2>
             <p className="text-gray-700 mb-6 text-lg font-semibold leading-relaxed">
@@ -54,27 +54,17 @@ export default function HaLongStation() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
           >
-            <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl bg-navy/20">
-              <video 
-                autoPlay 
-                muted 
-                loop 
-                playsInline
-                className="w-full h-[600px] object-cover"
-              >
-                <source src="https://cdn.pixabay.com/video/2023/10/20/185834-876527027_large.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-              <div className="absolute inset-0 bg-gradient-to-t from-navy/60 to-transparent pointer-events-none" />
-              <div className="absolute bottom-10 left-10 right-10 pointer-events-none">
-                <span className="inline-block px-4 py-1 rounded-full bg-gold text-navy text-xs font-bold mb-4 uppercase tracking-widest">
-                  Kiến trúc biểu tượng
-                </span>
-                <h3 className="text-white text-3xl font-display font-bold">Hạ Long Station</h3>
-              </div>
+            <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl bg-navy/20 aspect-video w-full h-[300px] sm:h-[400px] md:h-[450px] lg:h-[400px] xl:h-[450px]">
+              <iframe
+                className="w-full h-full border-0"
+                src="https://www.youtube.com/embed/wyjTw0Vv7N8?autoplay=0&rel=0&modestbranding=1"
+                title="Hạ Long Station - Vinhomes Global Gate"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              ></iframe>
             </div>
             {/* Decorative background circle */}
-            <div className="absolute -top-10 -left-10 w-64 h-64 bg-gold/10 rounded-full blur-3xl" />
+            <div className="absolute -top-10 -left-10 w-64 h-64 bg-gold/10 rounded-full blur-3xl lg:block hidden" />
           </motion.div>
         </div>
       </div>

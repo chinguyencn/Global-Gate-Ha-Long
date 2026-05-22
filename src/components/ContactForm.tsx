@@ -38,7 +38,7 @@ export default function ContactForm() {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img 
-          src="https://images.unsplash.com/photo-1555436169-20e93ea9a7ff?q=80&w=2070&auto=format&fit=crop" 
+          src="https://i.postimg.cc/B6y9RzMv/contact-bg.png" 
           alt="Hạ Long Landscape" 
           className="w-full h-full object-cover"
           referrerPolicy="no-referrer"
@@ -49,8 +49,8 @@ export default function ContactForm() {
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto flex flex-col lg:flex-row items-center gap-16">
           <div className="lg:w-1/2 text-white">
-            <h2 className="text-4xl md:text-5xl font-display font-bold mb-6 leading-tight">
-              KẾT NỐI CÙNG <span className="text-gold">CHUYÊN VIÊN</span> PHÂN TÍCH
+            <h2 className="text-2xl md:text-3xl font-display font-bold mb-6 leading-tight">
+              KẾT NỐI CÙNG CHUYÊN VIÊN PHÂN TÍCH
             </h2>
             <p className="text-gray-300 text-lg mb-8">
               Đừng bỏ lỡ chu kỳ tăng giá vàng của Hạ Long. Hãy để tôi giúp bạn phân tích dòng tiền và lựa chọn quỹ căn tiềm năng nhất.

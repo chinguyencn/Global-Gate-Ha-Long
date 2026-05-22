@@ -7,7 +7,7 @@ export default function Hero() {
       {/* Background Image with Parallax Effect */}
       <div className="absolute inset-0 z-0">
         <img
-          src="https://images.unsplash.com/photo-1596401057633-54a8fe8ef647?q=80&w=2070&auto=format&fit=crop"
+          src="https://i.postimg.cc/RF852YXq/hero-bg.png"
           alt="Hạ Long Bay Night View"
           className="w-full h-full object-cover brightness-50"
           referrerPolicy="no-referrer"
@@ -24,8 +24,8 @@ export default function Hero() {
           <span className="inline-block px-4 py-1 rounded-full bg-gold/20 border border-gold/30 text-gold-light text-sm font-semibold mb-6 tracking-widest uppercase">
             Cơ hội đầu tư F1 - Đợt 1
           </span>
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold text-white mb-6 leading-tight max-w-5xl mx-auto">
-            VINHOMES GLOBAL GATE HẠ LONG – ĐÓN ĐẦU CHU KỲ TĂNG GIÁ TỪ <span className="text-gold">"SIÊU HẠ TẦNG"</span> 18 TỶ USD
+          <h1 className="text-2xl md:text-4xl lg:text-5xl font-display font-bold text-white mb-6 leading-tight max-w-5xl mx-auto">
+            VINHOMES GLOBAL GATE HẠ LONG – ĐÓN ĐẦU CHU KỲ TĂNG GIÁ TỪ <br className="hidden md:inline" /> <span className="text-gold whitespace-nowrap">"SIÊU HẠ TẦNG"</span> 18 TỶ USD
           </h1>
           <p className="text-lg md:text-xl text-gray-200 mb-10 max-w-3xl mx-auto leading-relaxed">
             Sở hữu quỹ căn đợt 1 tại "Hà Nội mới" bên vịnh di sản. Kết nối tốc độ cao 350km/h – Rút ngắn thời gian di chuyển chỉ còn 23 phút.
