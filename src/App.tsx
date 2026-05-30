@@ -14,6 +14,7 @@ import FinancialPolicy from "./components/FinancialPolicy";
 import ContactForm from "./components/ContactForm";
 import Footer from "./components/Footer";
 import ZaloButton from "./components/ZaloButton";
+import HotlineModal from "./components/HotlineModal";
 
 export default function App() {
   return (
@@ -29,6 +30,7 @@ export default function App() {
       <ContactForm />
       <Footer />
       <ZaloButton />
+      <HotlineModal />
     </main>
   );
 }

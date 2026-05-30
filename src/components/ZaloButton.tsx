@@ -1,11 +1,22 @@
+import React, { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { MessageCircle, X, Phone } from "lucide-react";
-import { useState } from "react";
 
 export default function ZaloButton() {
   const [isOpen, setIsOpen] = useState(false);
   const phoneNumber = "0785867676";
   const greeting = "chào Anh/Chị! Rất vui được kết nối với Anh/Chị qua dự án VINHOMES GLOBAL GATE HẠ LONG";
+
+  const handleHotlineClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) 
+                    || window.innerWidth < 1024;
+    if (isMobile) {
+      window.location.href = `tel:${phoneNumber}`;
+    } else {
+      window.dispatchEvent(new CustomEvent("open-hotline-modal"));
+    }
+  };
 
   return (
     <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-4">
@@ -30,17 +41,17 @@ export default function ZaloButton() {
               <p className="text-sm text-gray-600 font-medium leading-relaxed">
                 {greeting}
               </p>
-              <a 
-                href={`tel:${phoneNumber}`}
-                className="text-xl font-bold text-[#0068FF] hover:underline"
+              <button 
+                onClick={handleHotlineClick}
+                className="text-xl font-bold text-[#0068FF] hover:underline cursor-pointer font-sans"
               >
                 {phoneNumber}
-              </a>
+              </button>
               <a 
                 href={`https://zalo.me/${phoneNumber}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full py-2 bg-[#0068FF] text-white text-sm font-bold rounded-lg shadow-lg hover:bg-[#005ae0] transition-all flex items-center justify-center gap-2"
+                className="w-full py-2 bg-[#0068FF] text-white text-sm font-bold rounded-lg shadow-lg hover:bg-[#005ae0] transition-all flex items-center justify-center gap-2 font-sans"
               >
                 <MessageCircle size={16} fill="currentColor" />
                 Mở Zalo ngay

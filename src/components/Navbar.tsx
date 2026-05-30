@@ -1,6 +1,18 @@
+import React from "react";
 import { motion } from "motion/react";
 
 export default function Navbar() {
+  const handleHotlineClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) 
+                    || window.innerWidth < 1024;
+    if (isMobile) {
+      window.location.href = "tel:0785867676";
+    } else {
+      window.dispatchEvent(new CustomEvent("open-hotline-modal"));
+    }
+  };
+
   return (
     <nav className="fixed top-0 left-0 w-full z-50 bg-navy/80 backdrop-blur-md border-b border-white/10">
       <div className="container mx-auto px-4 h-20 flex items-center justify-between">
@@ -24,14 +36,18 @@ export default function Navbar() {
           <a href="#" className="hover:text-gold transition-colors">Chính sách</a>
         </div>
 
-        <motion.a
-          href="#contact"
+        <motion.button
+          onClick={handleHotlineClick}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          className="px-6 py-2 bg-gold text-navy font-bold rounded-full text-xs uppercase tracking-wider shadow-lg"
+          className="flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-red-600 via-red-500 to-orange-500 hover:from-red-500 hover:to-orange-400 text-white font-black rounded-full text-xs md:text-sm uppercase tracking-wider shadow-lg shadow-red-600/30 border border-white/20 transition-all cursor-pointer animate-pulse font-sans"
         >
-          Nhận báo giá
-        </motion.a>
+          <span className="flex h-2 w-2 relative">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-white"></span>
+          </span>
+          HOTLINE: 0785867676
+        </motion.button>
       </div>
     </nav>
   );

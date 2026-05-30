@@ -1,5 +1,7 @@
+import React, { useState } from "react";
 import { motion } from "motion/react";
-import { ShoppingBag, Home, Waves, CheckCircle2 } from "lucide-react";
+import { ShoppingBag, Waves, CheckCircle2 } from "lucide-react";
+import DownloadModal from "./DownloadModal";
 
 const products = [
   {
@@ -23,6 +25,20 @@ const products = [
 ];
 
 export default function ProductShowcase() {
+  const [modalState, setModalState] = useState({
+    isOpen: false,
+    productTitle: "",
+    fileUrl: ""
+  });
+
+  const handleDownloadClick = (e: React.MouseEvent, title: string, fileUrl: string) => {
+    e.preventDefault();
+    setModalState({
+      isOpen: true,
+      productTitle: title,
+      fileUrl
+    });
+  };
   return (
     <section className="py-24 bg-gray-50">
       <div className="container mx-auto px-4">
@@ -73,28 +89,24 @@ export default function ProductShowcase() {
                     </span>
                   ))}
                 </div>
-                {product.fileUrl.startsWith("http") ? (
-                  <a 
-                    href={product.fileUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-full block text-center py-4 border-2 border-navy text-navy font-bold rounded-xl hover:bg-navy hover:text-white transition-all shadow-sm cursor-pointer"
-                  >
-                    TẢI CHI TIẾT MẶT BẰNG (DIRECT DOWNLOAD)
-                  </a>
-                ) : (
-                  <a 
-                    href={product.fileUrl}
-                    className="w-full block text-center py-4 border-2 border-navy text-navy font-bold rounded-xl hover:bg-navy hover:text-white transition-all shadow-sm cursor-pointer"
-                  >
-                    KẾT NỐI NHẬN MẶT BẰNG CHI TIẾT
-                  </a>
-                )}
+                <button 
+                  onClick={(e) => handleDownloadClick(e, product.title, product.fileUrl)}
+                  className="w-full block text-center py-4 border-2 border-navy text-navy font-bold rounded-xl hover:bg-navy hover:text-white transition-all shadow-sm cursor-pointer font-sans"
+                >
+                  TẢI CHI TIẾT MẶT BẰNG (DIRECT DOWNLOAD)
+                </button>
               </div>
             </motion.div>
           ))}
         </div>
       </div>
+
+      <DownloadModal 
+        isOpen={modalState.isOpen} 
+        onClose={() => setModalState({ ...modalState, isOpen: false })} 
+        productTitle={modalState.productTitle} 
+        fileUrl={modalState.fileUrl} 
+      />
     </section>
   );
 }
